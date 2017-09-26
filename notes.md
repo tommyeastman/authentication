@@ -16,3 +16,6 @@ to this
 ```javascript
 export { Button };
 ```
+#TextInput
+
+By default, TextInput has a height and width of 0, just like images.

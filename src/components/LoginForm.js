@@ -1,10 +1,19 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { TextInput } from 'react-native';
+import { Button, Card, CardSection } from './common';
 
 class LoginForm extends React.Component {
     render() {
-        return(
-            <Text>login form</Text>
+        return (
+            <Card>
+                <CardSection />
+                    <TextInput>Username</TextInput>
+                <CardSection />
+                    <TextInput>Password</TextInput>
+                <CardSection>
+                    <Button>Login</Button>
+                </CardSection>
+            </Card>
         );
     }
 }
