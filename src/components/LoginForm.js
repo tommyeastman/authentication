@@ -7,9 +7,9 @@ class LoginForm extends React.Component {
         return (
             <Card>
                 <CardSection />
-                    <TextInput>Username</TextInput>
+                    <TextInput />
                 <CardSection />
-                    <TextInput>Password</TextInput>
+                    <TextInput />
                 <CardSection>
                     <Button>Login</Button>
                 </CardSection>
