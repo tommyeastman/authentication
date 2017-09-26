@@ -19,3 +19,18 @@ export { Button };
 #TextInput
 
 By default, TextInput has a height and width of 0, just like images.
+
+#Expo
+
+Expo will give error about ScrollView being out of sync and components not being exported as a standard error.
+
+#ES6
+ES6 condenses key-value pairs so you can write
+```javascript
+{ text: text}
+```
+as
+```javascript
+{ text }
+```
+need to understand this better.
