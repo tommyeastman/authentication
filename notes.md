@@ -19,6 +19,25 @@ export { Button };
 #TextInput
 
 By default, TextInput has a height and width of 0, just like images.
+TextInput doesn't keep the text value.
+text value is held as state outside Text Input.
+tell TextInput to setState using onChangeText prop.
+setState() automatically re-renders the component.
+once the component is re-rendered, need to tell text that its value is this.state.text.
+
+```javascript
+class LoginForm extends React.Component {
+    state = { text: ' '};
+
+    render() {
+        return (
+            <Card>
+                <CardSection />
+                    <TextInput 
+                    value = {this.state.text}
+                    onChangeText={text => this.setState({ text })}
+                    />
+```
 
 #Expo
 
