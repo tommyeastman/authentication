@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { Header } from './components/common';
+import { Header } from './src/components/common';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <Header headerText={"Heyheyhey"}>
@@ -21,3 +21,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 })*/
+
+export default App;
