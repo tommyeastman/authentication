@@ -4,7 +4,7 @@ import { View, ActivityIndicator } from 'react-native';
 const Spinner = (props) => {
     return (
         <View style={styles.spinnerStyle}>
-            <ActivityIndicator animating={props.spinnerShow}/>
+            <ActivityIndicator />
         </View>
     );
 };

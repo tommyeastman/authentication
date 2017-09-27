@@ -9,8 +9,7 @@ class LoginForm extends React.Component {
     onButtonPress() {
         const { email, password } = this.state;
 
-        this.setState({ error: '' });
-        this.setState({ spinnerShow: true });
+        this.setState({ error: '', spinnerShow: true });
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .catch(() => {
@@ -19,6 +18,18 @@ class LoginForm extends React.Component {
                         this.setState({ error: "Authentication failed." })
                     })
             })
+    }
+
+    renderButton() {
+        if(this.state.spinnerShow){
+            return( <Spinner/> );
+        } 
+        
+        return (
+            <Button onPress={this.onButtonPress.bind(this)}>
+            Login
+            </Button>
+        );
     }
 
     render() {
@@ -46,13 +57,7 @@ class LoginForm extends React.Component {
                 <Text style={styles.errorStyle}>{this.state.error}</Text>
 
                 <CardSection>
-                    <Button onPress={this.onButtonPress.bind(this)}>
-                        Login
-                    </Button>
-                </CardSection>
-
-                <CardSection>
-                    <Spinner spinnerShow={this.state.spinnerShow}/>
+                    {this.renderButton()}
                 </CardSection>
 
             </Card>
