@@ -29,15 +29,15 @@ class LoginForm extends React.Component {
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(() => {
-                this.onLoginSuccess.bind(this)
+                this.onLoginSuccess()
             })
             .catch(() => {
                 firebase.auth().createUserWithEmailAndPassword(email, password)
                     .then(() => {
-                        this.onLoginSuccess.bind(this)
+                        this.onLoginSuccess()
                     })
                     .catch(() => {
-                        this.onLoginFail.bind(this)
+                        this.onLoginFail()
                     })
             })
     }
