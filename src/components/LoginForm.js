@@ -12,22 +12,28 @@ class LoginForm extends React.Component {
         this.setState({ error: '', spinnerShow: true });
 
         firebase.auth().signInWithEmailAndPassword(email, password)
+            .then(() => {
+                this.setState({ error: '', spinnerShow: false });
+            })
             .catch(() => {
                 firebase.auth().createUserWithEmailAndPassword(email, password)
+                    .then(() => {
+                        this.setState({ error: '', spinnerShow: false });
+                    })
                     .catch(() => {
-                        this.setState({ error: "Authentication failed." })
+                        this.setState({ error: "Sorry, another account with this email already exists.", spinnerShow: false })
                     })
             })
     }
 
     renderButton() {
-        if(this.state.spinnerShow){
-            return( <Spinner/> );
-        } 
-        
+        if (this.state.spinnerShow) {
+            return (<Spinner />);
+        }
+
         return (
             <Button onPress={this.onButtonPress.bind(this)}>
-            Login
+                Login / Create Account
             </Button>
         );
     }
