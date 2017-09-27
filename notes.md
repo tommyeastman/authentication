@@ -76,3 +76,24 @@ similarly, this authentication returns a promise
 #Spinner
 spinner should be functional component.
 if i try to render a spinner, i should see a spinner on the screen.
+
+#Conditional rendering
+can use functions all over the place to compose your render method.
+example below shows conditionally rendering either button or spinner, based on state.
+```javascript
+renderButton() {
+    if(this.state.spinnerShow){
+        return( <Spinner/> );
+    } 
+    
+    return (
+        <Button onPress={this.onButtonPress.bind(this)}>
+        Login
+        </Button>
+    );
+}
+
+<CardSection>
+    {this.renderButton()}
+</CardSection>
+```
