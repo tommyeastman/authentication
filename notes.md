@@ -53,3 +53,8 @@ as
 { text }
 ```
 need to understand this better.
+
+#Flex
+2 siblings
+sibling 1 flex:1 space taken up = 1/(1+3)
+sibling 2 flex:3 space taken up = 3(1+3)
