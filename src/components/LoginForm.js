@@ -6,6 +6,22 @@ import { Button, Card, CardSection, Input, Spinner } from './common';
 class LoginForm extends React.Component {
     state = { email: '', password: '', error: '', spinnerShow: false };
 
+    onLoginSuccess() {
+        this.setState({
+            email: '',
+            password: '',
+            error: '',
+            spinnerShow: false
+        })
+    }
+
+    onLoginFail() {
+        this.setState({
+            error: "Sorry, another account with this email already exists.",
+            spinnerShow: false
+        })
+    }
+
     onButtonPress() {
         const { email, password } = this.state;
 
@@ -13,18 +29,19 @@ class LoginForm extends React.Component {
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(() => {
-                this.setState({ error: '', spinnerShow: false });
+                this.onLoginSuccess()
             })
             .catch(() => {
                 firebase.auth().createUserWithEmailAndPassword(email, password)
                     .then(() => {
-                        this.setState({ error: '', spinnerShow: false });
+                        this.onLoginSuccess()
                     })
                     .catch(() => {
-                        this.setState({ error: "Sorry, another account with this email already exists.", spinnerShow: false })
+                        this.onLoginFail()
                     })
             })
     }
+
 
     renderButton() {
         if (this.state.spinnerShow) {
