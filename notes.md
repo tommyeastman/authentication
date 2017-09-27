@@ -117,3 +117,9 @@ but this worked for me (at least for now):
 ```javascript
 .then( this.onLoginSuccess.() )
 ```
+when the authentication state changes, if the user is signed in, this user parameter will be an object
+that represents the user, but if they sign out, it will be null or undefined. so we can look at the
+argument to decide whether or not the user is signed in when the method is called
+```javascript
+firebase.auth().onAuthStateChanged( (user) => {} )
+```
