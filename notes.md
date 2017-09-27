@@ -72,3 +72,7 @@ don't understand the bind(this)
 #Authenticating Users
 When we authenticate a user against the database, this is an asynchronous request similar to an http request from an API
 similarly, this authentication returns a promise
+
+#Spinner
+spinner should be functional component.
+if i try to render a spinner, i should see a spinner on the screen.
