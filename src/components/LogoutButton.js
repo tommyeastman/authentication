@@ -1,13 +1,14 @@
 import React from 'react';
-import { Text } from 'react-native';
+import firebase from 'firebase';
 import { Button, Card, CardSection } from './common';
 
 const LogoutButton = () => {
-    return(
+
+    return (
         <Card>
             <CardSection>
-                <Button>
-                Logout
+                <Button onPress={() => firebase.auth().signOut()}>
+                    Logout
                 </Button>
             </CardSection>
         </Card>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import firebase from 'firebase';
 import { Header } from './src/components/common';
 import LoginForm from './src/components/LoginForm';
@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   whatToDisplay() {
-    if(this.state.loggedIn) {return <LogoutButton/> }
+    if(this.state.loggedIn) {return <LogoutButton />}
     return <LoginForm />
   }
 
@@ -38,15 +38,5 @@ class App extends React.Component {
     );
   }
 }
-
-/*
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})*/
 
 export default App;
