@@ -58,3 +58,11 @@ need to understand this better.
 2 siblings
 sibling 1 flex:1 space taken up = 1/(1+3)
 sibling 2 flex:3 space taken up = 3(1+3)
+
+#Callback functions
+A callback function, also known as a higher-order function, is a function that is passed to another function (let’s call this other function “otherFunction”) as a parameter, and the callback function is called (or executed) inside the otherFunction. 
+[more](http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/)
+
+#Authenticating Users
+When we authenticate a user against the database, this is an asynchronous request similar to an http request from an API
+similarly, this authentication returns a promise
