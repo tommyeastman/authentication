@@ -107,3 +107,13 @@ renderButton() {
     {this.renderButton()}
 </CardSection>
 ```
+
+When passing a function to a promise, it will be invoked at some time in the future
+and we don't know the context it will be called with, we have to bind the context to this like so:
+```javascript
+.then( this.onLoginSuccess.bind(this) )
+```
+but this worked for me (at least for now):
+```javascript
+.then( this.onLoginSuccess.() )
+```
