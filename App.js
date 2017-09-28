@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import { Header } from './src/components/common';
 import LoginForm from './src/components/LoginForm';
 import LogoutButton from './src/components/LogoutButton';
+import FlatListBasics from './src/components/FlatListBasics';
 
 class App extends React.Component {
   state = { loggedIn: false }
@@ -34,6 +35,7 @@ class App extends React.Component {
       <View>
         <Header headerText={'Heyheyhey'}/>
         {this.whatToDisplay()}
+        <FlatListBasics />
       </View>
     );
   }
