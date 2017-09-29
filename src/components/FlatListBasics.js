@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
-import {  FlatList, StyleSheet, Text, View } from 'react-native';
+import {  FlatList, Text, View } from 'react-native';
 
 class FlatListBasics extends Component {
+  _keyExtractor = (item => item.key);
+  
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <FlatList
           data={[
-            {key: 'Devin'},
-            {key: 'Jackson'},
-            {key: 'James'},
-            {key: 'Joel'},
-            {key: 'John'},
-            {key: 'Jillian'},
-            {key: 'Jimmy'},
-            {key: 'Julie'},
+            {key: 'Devin', value: 111},
+            {key: 'Jackson', value: 222},
+            {key: 'James', value: 333},
+            {key: 'Joel', value: 444},
+            {key: 'John', value: 555},
           ]}
-          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+          _keyExtractor = {this._keyExtractor} 
+          renderItem={({item}) => <Text> {item.value} </Text>}
         />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
+/*
+const styles = {
   container: {
    flex: 1,
    paddingTop: 22
@@ -33,6 +34,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     height: 44,
   },
-})
+};*/
 
 export default FlatListBasics;

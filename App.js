@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import firebase from 'firebase';
 import { Header } from './src/components/common';
 import LoginForm from './src/components/LoginForm';
@@ -34,8 +34,10 @@ class App extends React.Component {
     return (
       <View>
         <Header headerText={'Heyheyhey'}/>
-        {this.whatToDisplay()}
+        {/*this.whatToDisplay()*/}
+        <Text>some text.</Text>
         <FlatListBasics />
+        <Text>some  more text.</Text>
       </View>
     );
   }
